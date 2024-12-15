@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "easynetsim"
+version = "0.1.2"
+description = "A simple network simulator for testing ping and routing"
+authors = ["Ihor Savenko <csigorek@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/denver-code/easynetsim"
+homepage = "https://github.com/denver-code/easynetsim"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+networkx = "^3.4.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.3.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
