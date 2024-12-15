@@ -6,7 +6,6 @@ from .utils import resolve_mac, traverse_network
 network = nx.DiGraph()
 
 
-# Load network from configuration data
 def load_network(config: dict):
     """
     Load the network from a configuration dictionary.
