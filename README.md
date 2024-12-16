@@ -1,6 +1,6 @@
-# Easy Network Simulator
+# Easy Network Simulator [WIP]
 
-A simple network simulator for testing ping and routing between nodes.
+A simple network simulator for testing different protocols and routing between nodes. 
 
 ## Installation
 
