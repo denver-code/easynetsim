@@ -12,25 +12,43 @@ pip install easynetsim
 
 ## Usage
 ```python
-from easynetsim import load_network, ping
+from easynetsim import NetworkSimulator
 
-# Define the network configuration
-network_data = {
+# Define network configuration
+config = {
     "nodes": [
-        {"hostname": "node1", "ip": "192.168.1.1"},
-        {"hostname": "node2", "ip": "192.168.1.2"},
-        {"hostname": "node3", "ip": "192.168.1.3"},
+        {"hostname": "router1", "ip": "192.168.1.1", "type": "router"},
+        {"hostname": "server1", "ip": "192.168.1.10", "type": "server"},
+        {"hostname": "client1", "ip": "192.168.1.100", "type": "client"},
     ],
     "links": [
-        {"source": "node1", "destination": "node2", "latency": 20},
-        {"source": "node2", "destination": "node3", "latency": 20},
+        {
+            "source": "router1",
+            "destination": "server1",
+            "latency": 10,
+            "packet_loss": 0.05,
+        },
+        {
+            "source": "router1",
+            "destination": "client1",
+            "latency": 20,
+            "packet_loss": 0.01,
+        },
     ],
 }
 
-# Load the network
-load_network(network_data)
+# Initialize network simulator
+simulator = NetworkSimulator()
+simulator.load_network(config)
 
-# Ping a node
-result = ping("node1", "192.168.1.3")
+# Demonstrate ping operation
+result = simulator.ping("client1", "192.168.1.10")
 print(result)
 ```
+
+### Examples
+More examples located in `examples` folder.
+
+## Roadmap  
+- [ ] Test cases
+- [ ] Action for release autopublish
