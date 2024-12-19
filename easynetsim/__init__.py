@@ -1,1 +1,2 @@
-from .network import NetworkSimulator, NetworkNode, NetworkLink
+from .network import NetworkSimulator
+from .network_dataclasses import NetworkNode, NetworkLink
